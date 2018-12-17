@@ -1,6 +1,7 @@
 package com.plasticlove.content.service.impl;
 
 import com.plasticlove.commons.EasyUITreeNode;
+import com.plasticlove.commons.TaotaoResult;
 import com.plasticlove.content.service.ContentCategoryService;
 import com.plasticlove.mapper.TbContentCategoryMapper;
 import com.plasticlove.pojo.TbContentCategory;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -42,6 +44,26 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
 		}
 		//6.返回
 		return nodes;
+	}
+
+	@Override
+	public TaotaoResult createContentCategory(Long parentId, String name) {
+		TbContentCategory parentCategory = mapper.selectByPrimaryKey(parentId);
+		if(!parentCategory.getIsParent()){
+			parentCategory.setIsParent(true);
+			mapper.updateByPrimaryKey(parentCategory);
+		}
+		TbContentCategory tbContentCategory = new TbContentCategory();
+		tbContentCategory.setCreated(new Date());
+		tbContentCategory.setIsParent(false);
+		tbContentCategory.setName(name);
+		tbContentCategory.setParentId(parentId);
+		tbContentCategory.setSortOrder(1);
+		tbContentCategory.setStatus(1);
+		tbContentCategory.setUpdated(tbContentCategory.getCreated());
+		mapper.insertSelective(tbContentCategory);
+
+		return TaotaoResult.ok(tbContentCategory);
 	}
 
 

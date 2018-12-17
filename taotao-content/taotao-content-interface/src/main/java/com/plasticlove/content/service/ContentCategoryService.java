@@ -14,5 +14,5 @@ public interface ContentCategoryService {
 	 * @param name 新增节点的名称
 	 * @return
 	 */
-	//public TaotaoResult createContentCategory(Long parentId, String name);
+	public TaotaoResult createContentCategory(Long parentId, String name);
 }

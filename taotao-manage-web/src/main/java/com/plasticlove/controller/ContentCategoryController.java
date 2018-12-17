@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.plasticlove.commons.EasyUITreeNode;
 
+import com.plasticlove.commons.TaotaoResult;
 import com.plasticlove.content.service.ContentCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,15 +36,12 @@ public class ContentCategoryController {
 	}
 	
 
-	 /* 添加节点
-	 * @param parentId
-	 * @param name
-	 * @return
-	 */
-	/*@RequestMapping(value="/content/category/create",method=RequestMethod.POST)
+
+
+	@RequestMapping(value="/content/category/create",method=RequestMethod.POST)
 	@ResponseBody
 	public TaotaoResult createContentCategory(Long parentId, String name){
 		return service.createContentCategory(parentId, name);
-	}*/
+	}
 	
 }

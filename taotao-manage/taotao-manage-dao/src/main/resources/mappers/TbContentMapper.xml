@@ -217,7 +217,13 @@
       <include refid="Example_Where_Clause" />
     </if>
   </select>
-  <update id="updateByExampleSelective" parameterType="map" >
+
+
+	<select id="selectByCategoryId" resultMap="BaseResultMap" parameterType="long">
+      select * from tb_content where category_id=#{CategoryId}
+    </select>
+
+	<update id="updateByExampleSelective" parameterType="map" >
     update tb_content
     <set >
       <if test="record.id != null" >
