@@ -8,6 +8,7 @@ import java.util.List;
 
 public interface ContentService {
     public EasyUIDataGridResult queryContent(Long categoryID, Integer page, Integer rows);
+    public List<TbContent> getContentListByCategoryID(Long categoryID);
 
     public TaotaoResult saveContent(TbContent tbContent);
 }

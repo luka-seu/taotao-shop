@@ -19,4 +19,5 @@
 	<!-- 声明需要暴露的服务接口 -->
 	<dubbo:service interface="com.plasticlove.manage.service.TestService" ref="testServiceImpl" timeout="12000"/>
 	<dubbo:service interface="com.plasticlove.manage.service.ItemService" ref="itemServiceImpl" timeout="12000"/>
+	<dubbo:service interface="com.plasticlove.manage.service.FileService" ref="fileServiceImpl" timeout="12000"/>
 </beans>

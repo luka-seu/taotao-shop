@@ -26,6 +26,17 @@
             <artifactId>taotao-common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.plasticlove</groupId>
+            <artifactId>taotao-utils</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>

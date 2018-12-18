@@ -48,6 +48,7 @@
         <activemq.version>5.13.0</activemq.version>
         <freemarker.version>2.3.23</freemarker.version>
         <quartz.version>2.2.2</quartz.version>
+        <guava.version>20.0</guava.version>
     </properties>
     <!-- 就是管理版本的标签   其下的dependencies标签只是版本的管理 并不依赖jar-->
     <dependencyManagement>
@@ -58,6 +59,13 @@
                 <artifactId>joda-time</artifactId>
                 <version>${joda-time.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+
             <!-- Apache工具组件 -->
             <dependency>
                 <groupId>org.apache.commons</groupId>

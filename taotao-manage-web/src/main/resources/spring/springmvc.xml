@@ -16,6 +16,12 @@
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
+
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="maxUploadSize" value="10485760"/> <!-- 10m -->
+		<property name="maxInMemorySize" value="4096" />
+		<property name="defaultEncoding" value="UTF-8"></property>
+	</bean>
 	<!-- 配置静态资源映射  -->
 	<!-- 指定/WEB-INF/js   /WEB-INF/css/  下的所有的静态资源包括子目录下的静态资源  都不被拦截-->
 	<!--  mapping=/js/**  :表示访问静态资源的路径的形式    可以访问 /js/下的静态资源或者所有的子目录下的静态资源-->
@@ -29,4 +35,5 @@
 	<dubbo:reference interface="com.plasticlove.manage.service.ItemService" id="itemService" timeout="12000"/>
 	<dubbo:reference interface="com.plasticlove.content.service.ContentCategoryService" id="contentCategoryService" timeout="12000"/>
 	<dubbo:reference interface="com.plasticlove.content.service.ContentService" id="contentService" timeout="12000"/>
+	<dubbo:reference interface="com.plasticlove.manage.service.FileService" id="fileService" timeout="12000"/>
 </beans>

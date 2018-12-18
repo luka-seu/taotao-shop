@@ -39,6 +39,15 @@ public class ContentServiceImpl implements ContentService {
         return result;
     }
 
+
+
+    @Override
+    public List<TbContent> getContentListByCategoryID(Long categoryID) {
+        List<TbContent> tbContentList =contentMapper.selectByCategoryId(categoryID);
+        return tbContentList;
+    }
+
+
     @Override
     public TaotaoResult saveContent(TbContent tbContent) {
 

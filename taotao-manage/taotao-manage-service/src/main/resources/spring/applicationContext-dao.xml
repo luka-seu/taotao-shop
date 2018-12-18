@@ -28,8 +28,10 @@
 		<property name="configLocation" value="classpath:mybatis/SqlMapConfig.xml" />
 		<property name="mapperLocations" value="classpath*:mappers/*Mapper.xml"></property>
 	</bean>
-	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.plasticlove.mapper" />
+
+
+	<bean name="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="com.plasticlove.mapper"/>
 	</bean>
 	
 	<!-- mapper扫描器 -->

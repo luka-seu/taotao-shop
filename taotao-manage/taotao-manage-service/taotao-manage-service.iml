@@ -30,5 +30,9 @@
     <orderEntry type="module" module-name="taotao-common" />
     <orderEntry type="library" name="Maven: com.github.pagehelper:pagehelper:3.4.2" level="project" />
     <orderEntry type="module" module-name="taotao-manage-pojo" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-web:4.2.4.RELEASE" level="project" />
+    <orderEntry type="module" module-name="taotao-utils" />
+    <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava:20.0" level="project" />
   </component>
 </module>
