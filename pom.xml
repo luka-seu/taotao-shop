@@ -16,6 +16,9 @@
         <module>taotao-portal-web</module>
 
 		<module>taotao-utils</module>
+		<module>taotao-serach</module>
+        <module>taotao-search-web</module>
+		<module>taotao-search</module>
 	</modules>
 
 

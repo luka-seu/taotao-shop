@@ -35,5 +35,5 @@
 	<dubbo:reference interface="com.plasticlove.manage.service.ItemService" id="itemService" timeout="12000"/>
 	<dubbo:reference interface="com.plasticlove.content.service.ContentCategoryService" id="contentCategoryService" timeout="12000"/>
 	<dubbo:reference interface="com.plasticlove.content.service.ContentService" id="contentService" timeout="12000"/>
-	<dubbo:reference interface="com.plasticlove.manage.service.FileService" id="fileService" timeout="12000"/>
+	<!--<dubbo:reference interface="com.plasticlove.manage.service.FileService" id="fileService" timeout="12000"/>-->
 </beans>

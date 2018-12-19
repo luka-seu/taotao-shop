@@ -1,13 +1,15 @@
 package com.plasticlove.controller;
 
+import com.google.common.collect.Lists;
 import com.plasticlove.commons.EasyUIDataGridResult;
 
 
 import com.plasticlove.commons.PicUploadResult;
 import com.plasticlove.commons.TaotaoResult;
 import com.plasticlove.content.service.ContentService;
-import com.plasticlove.manage.service.FileService;
+
 import com.plasticlove.pojo.TbContent;
+import com.plasticlove.utils.FTPUtil;
 import com.plasticlove.utils.PropertiesUtil;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
+import java.util.UUID;
 
 @Controller
 public class ContentController {
@@ -26,8 +31,8 @@ public class ContentController {
     @Autowired
     private ContentService contentService;
 
-    @Autowired
-    private FileService fileService;
+
+    /*private FileService fileService;*/
 
     @RequestMapping(value = "/content/query/list", method = RequestMethod.GET)
     @ResponseBody
@@ -46,12 +51,45 @@ public class ContentController {
     @RequestMapping(value = "/pic/upload", method = RequestMethod.POST)
     @ResponseBody
     public PicUploadResult uploadPic(MultipartFile uploadFile, HttpServletRequest request) {
-
         PicUploadResult uploadResult = new PicUploadResult();
         String path = request.getSession().getServletContext().getRealPath("upload");
-        String targetFileName = fileService.upload(uploadFile, path);
-        String url = PropertiesUtil.getProperty("ftp.server.http.prefix") + targetFileName;
-        uploadResult.setUrl(url);
-        return uploadResult;
+        String fileName = uploadFile.getOriginalFilename();
+        //扩展名
+        //abc.jpg
+        String fileExtensionName = fileName.substring(fileName.lastIndexOf(".")+1);
+        String uploadFileName = UUID.randomUUID().toString()+"."+fileExtensionName;
+        File fileDir = new File(path);
+        if(!fileDir.exists()){
+            fileDir.setWritable(true);
+            fileDir.mkdirs();
+        }
+        File targetFile = new File(path,uploadFileName);
+        try {
+            uploadFile.transferTo(targetFile);
+            //文件已经上传成功了
+
+
+            FTPUtil.uploadFile(Lists.newArrayList(targetFile));
+            //已经上传到ftp服务器上
+
+
+
+            String targetFileName =  targetFile.getName();
+
+
+
+
+            String url = "http://121.248.55.152:8086/imgs/" + targetFileName;
+            uploadResult.setUrl(url);
+            targetFile.delete();
+            return uploadResult;
+
+        } catch (IOException e) {
+            //logger.error("上传文件异常",e);
+            return null;
+        }
+        //A:abc.jpg
+        //B:abc.jpg
+
     }
 }
