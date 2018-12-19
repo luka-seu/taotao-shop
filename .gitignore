@@ -153,7 +153,7 @@ $RECYCLE.BIN/
 *.msix
 *.msm
 *.msp
-
+*.iml
 # Windows shortcuts
 *.lnk
 ### OracleForms template
@@ -283,3 +283,17 @@ application/logs/*
 .classpath
 .settings
 .project
+taotao-common/taotao-common.iml
+taotao-content/taotao-content.iml
+taotao-manage-web/taotao-manage-web.iml
+taotao-manage/taotao-manage-dao/taotao-manage-dao.iml
+taotao-manage/taotao-manage-interface/taotao-manage-interface.iml
+taotao-manage/taotao-manage-pojo/taotao-manage-pojo.iml
+taotao-manage/taotao-manage.iml
+taotao-portal-web/taotao-portal-web.iml
+taotao-search-web/taotao-search-web.iml
+taotao-search/taotao-search-interface/taotao-search-interface.iml
+taotao-search/taotao-search-service/taotao-search-service.iml
+taotao-search/taotao-search.iml
+taotao-shop.iml
+taotao-utils/taotao-utils.iml
