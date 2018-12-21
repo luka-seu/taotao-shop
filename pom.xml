@@ -16,7 +16,7 @@
         <module>taotao-portal-web</module>
 
 		<module>taotao-utils</module>
-		<module>taotao-serach</module>
+
         <module>taotao-search-web</module>
 		<module>taotao-search</module>
 	</modules>
@@ -52,6 +52,7 @@
         <freemarker.version>2.3.23</freemarker.version>
         <quartz.version>2.2.2</quartz.version>
         <guava.version>20.0</guava.version>
+        <!--<spring.solr.version>4.0.3.RELEASE</spring.solr.version>-->
     </properties>
     <!-- 就是管理版本的标签   其下的dependencies标签只是版本的管理 并不依赖jar-->
     <dependencyManagement>
@@ -217,6 +218,12 @@
                 <version>${jedis.version}</version>
             </dependency>
             <!-- solr客户端 -->
+
+            <!--<dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-solr</artifactId>
+                <version>${spring.solr.version}</version>
+            </dependency>-->
             <dependency>
                 <groupId>org.apache.solr</groupId>
                 <artifactId>solr-solrj</artifactId>

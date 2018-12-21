@@ -14,6 +14,9 @@
 
 	<dependencies>
 		<!-- 添加接口的依赖 -->
+
+
+
 		<dependency>
 			<groupId>com.plasticlove</groupId>
 			<artifactId>taotao-search-interface</artifactId>

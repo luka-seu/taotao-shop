@@ -17,7 +17,8 @@
 	<!-- 用dubbo协议在20880端口暴露服务 -->
 	<dubbo:protocol name="dubbo" port="20880" />
 	<!-- 声明需要暴露的服务接口 -->
-	<dubbo:service interface="com.plasticlove.manage.service.TestService" ref="testServiceImpl" timeout="12000"/>
-	<dubbo:service interface="com.plasticlove.manage.service.ItemService" ref="itemServiceImpl" timeout="12000"/>
+	<dubbo:service interface="com.plasticlove.manage.service.TestService" ref="testServiceImpl" timeout="300000"/>
+	<dubbo:service interface="com.plasticlove.manage.service.ItemService" ref="itemServiceImpl" timeout="300000"/>
+	<dubbo:service interface="com.plasticlove.manage.service.SearchManageService" ref="searchManageServiceImpl" timeout="300000"/>
 	<!--<dubbo:service interface="com.plasticlove.manage.service.FileService" ref="fileServiceImpl" timeout="12000"/>-->
 </beans>
